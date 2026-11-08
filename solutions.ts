@@ -3,7 +3,7 @@
 const multiplyValue = (value: number, multiplier: number = 2): number => {
 
 
-    return value * multiplier;
+            return value * multiplier;
 };
 
  
@@ -19,17 +19,18 @@ const multiplyValue = (value: number, multiplier: number = 2): number => {
 
 const processInput = (value: string | number | boolean ): string | number  => {
     if (typeof value === "string") {
-        return value.trim().toLowerCase();
+             return value.trim().toLowerCase();
     }
 
     if (typeof value === "number") {
+
         return value * 10
     }
 
 
 
     if (typeof value === "boolean") {
-        return  value ? "active" : "inactive" 
+              return  value ? "active" : "inactive" 
 
       
     }
@@ -55,24 +56,16 @@ const processInput = (value: string | number | boolean ): string | number  => {
 
 
 const formatCoordinate = (
-    coordinate: readonly [number, number, string]
+    coordinate: readonly [number, number, string]): string => {
 
-): string => {
-
-    const [latitude, longitude, locationName] = coordinate
+      const [latitude, longitude, locationName] = coordinate
 
     return `Location:  (${latitude},${locationName},${longitude})`
 };
 
 
 
-console.log(formatCoordinate([23.81, 90.41, "Dhaka"]))
  
-
-console.log(formatCoordinate([22.35, 91.78, "Chittagong"]));
- 
-
-// Problem - 04 :
 
 
 const concatenateArrays = <T>(...arrays: T[][]): T[] => {
@@ -118,9 +111,9 @@ const getPopularCourses = (
 
 
     courses: Course[],
-    minStudents: number
 
-): Course[] => {
+
+    minStudents: number): Course[] => {
     return courses.filter(course => course.isPublished === true && course.students >= minStudents)
 }
  
@@ -145,8 +138,6 @@ const users = [
 ];
 
 
-
-
 const pluckValues = <T, K extends keyof T>(
 
     items: T[],key: K): T[K][] => {
@@ -168,14 +159,15 @@ const pluckValues = <T, K extends keyof T>(
 
 
 class Employee {
-    protected name: string;
+    protected name: string
+
     private baseSalary: number;
 
 
 
     constructor(name: string, baseSalary: number) {
-        this.name = name;
-        this.baseSalary = baseSalary;
+        this.name = name
+        this.baseSalary = baseSalary
 
 
     }
@@ -185,8 +177,6 @@ class Employee {
     }
 
 }
- 
-
  
 class Manager extends Employee {
 
@@ -209,7 +199,6 @@ class Manager extends Employee {
 
 
 const manager = new Manager("Alice", 50000, "Engineering");
-
 
 manager.getDetails();
 manager.getRoleInfo();
